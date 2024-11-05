@@ -1,0 +1,24 @@
+.titulo-prinsipal {
+    text-align: center;
+    color: #339afb;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+.contenedor-diagramas-de-flujo {
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: #e6f2fe; */
+    width: 600px;
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.mermaid {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    border: solid 2px #339afb;
+    /* background-color: aqua; */
+}

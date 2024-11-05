@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagramas de Flujo</title>
+    <!-- Importar la librería Mermaid -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js"></script>
+</head>
+<body>
+    <h1 class="titulo-prinsipal">Diagramas de Flujo</h1>
+    <section class="contenedor-diagramas-de-flujo">
+        <!-- Definir el div donde irá el diagrama -->
+        <div class="mermaid">
+            flowchart TD
+            A([Sistema Clase I]) -->|Inicio| B[Selección de Método]
+            
+            B --> C{Opción 'Caudal/Velocidad'}
+            C -->|Velocidad| D1[Introducir Velocidad]
+            C -->|Caudal| D2[Introducir Caudal]
+            
+            D1 --> E[Selección Material de Tubería]
+            D2 --> E
+            
+            E --> F[Selección Temperatura del Agua]
+            F --> G[Introducir Valor de Eficiencia]
+            
+            G --> H[Asignación de Diámetro y Longitud Primera Sección]
+            
+            H --> I[Definición de Cantidad de Accesorios]
+            
+            I --> J{Más Secciones?}
+            J -->|Sí| K[Siguiente Sección]
+            K --> H
+            
+            J -->|No| L[Valores Finales]
+            
+            L --> M([Calcular])
+            
+            M --> N([Resultados])
+            
+            style A fill:#339afb,color:#fff
+            style M fill:#339afb,color:#fff
+            style N fill:#339afb,color:#fff
+            style C fill:#fff,stroke:#339afb,color:#339afb
+            style J fill:#fff,stroke:#339afb,color:#339afb
+            style B stroke:#339afb,color:#339afb,fill:#fff
+            style D1 stroke:#339afb,color:#339afb,fill:#fff
+            style D2 stroke:#339afb,color:#339afb,fill:#fff
+            style E stroke:#339afb,color:#339afb,fill:#fff
+            style F stroke:#339afb,color:#339afb,fill:#fff
+            style G stroke:#339afb,color:#339afb,fill:#fff
+            style H stroke:#339afb,color:#339afb,fill:#fff
+            style I stroke:#339afb,color:#339afb,fill:#fff
+            style K stroke:#339afb,color:#339afb,fill:#fff
+            style L stroke:#339afb,color:#339afb,fill:#fff
+            linkStyle default stroke:#339afb,color:#339afb
+        </div>
+        <div class="mermaid">
+            flowchart TD
+            A([Sistema Clase II]) -->|Inicio| B[Introducción Parámetros]
+            
+            B --> C[Parámetros Punto 1]
+            B --> D[Parámetros Punto 2]
+            
+            C --> E[Selección Material]
+            D --> E
+            
+            E --> F[Selección Temperatura del Agua]
+            
+            F --> G[Introducción Diámetro y Longitud del Tramo]
+            
+            G --> H[Número de Elementos]
+            
+            H --> I{Más Tramos?}
+            I -->|Sí| J[Siguiente Tramo]
+            J --> G
+            
+            I -->|No| K([Calcular])
+            
+            K --> L([Resultados])
+            
+            style A fill:#339afb,color:#fff
+            style K fill:#339afb,color:#fff
+            style L fill:#339afb,color:#fff
+            style I fill:#fff,stroke:#339afb,color:#339afb
+            style B stroke:#339afb,color:#339afb,fill:#fff
+            style C stroke:#339afb,color:#339afb,fill:#fff
+            style D stroke:#339afb,color:#339afb,fill:#fff
+            style E stroke:#339afb,color:#339afb,fill:#fff
+            style F stroke:#339afb,color:#339afb,fill:#fff
+            style G stroke:#339afb,color:#339afb,fill:#fff
+            style H stroke:#339afb,color:#339afb,fill:#fff
+            style J stroke:#339afb,color:#339afb,fill:#fff
+            linkStyle default stroke:#339afb,color:#339afb
+        </div>
+        
+        <div class="mermaid">
+            flowchart TD
+            A([Sistema Clase III]) -->|Inicio| B[Introducción Parámetros]
+            
+            B --> C[Parámetros Punto 1]
+            B --> D[Parámetros Punto 2]
+            
+            C --> E[Selección Material y Temperatura]
+            D --> E
+            
+            E --> F[Introducción Longitud del Tramo]
+            
+            F --> G[Introducción Accesorios]
+            
+            G --> H[Número de Accesorios por Tipo]
+            
+            H --> I{Más Tramos?}
+            I -->|Sí| J[Siguiente Tramo]
+            J --> F
+            
+            I -->|No| K([Calcular])
+            
+            K --> L([Resultados])
+            
+            style A fill:#339afb,color:#fff
+            style K fill:#339afb,color:#fff
+            style L fill:#339afb,color:#fff
+            style I fill:#fff,stroke:#339afb,color:#339afb
+            style B stroke:#339afb,color:#339afb,fill:#fff
+            style C stroke:#339afb,color:#339afb,fill:#fff
+            style D stroke:#339afb,color:#339afb,fill:#fff
+            style E stroke:#339afb,color:#339afb,fill:#fff
+            style F stroke:#339afb,color:#339afb,fill:#fff
+            style G stroke:#339afb,color:#339afb,fill:#fff
+            style H stroke:#339afb,color:#339afb,fill:#fff
+            style J stroke:#339afb,color:#339afb,fill:#fff
+            linkStyle default stroke:#339afb,color:#339afb
+        </div>
+
+        <div class="mermaid">
+            flowchart TD
+            A([Método Hardy Cross]) -->|Inicio| B[Distribución Previa de Caudales]
+            
+            B --> C[Introducción de Valores]
+            
+            C --> D[Caudal por Tramo]
+            C --> E[Longitud por Tramo]
+            C --> F[Diámetro por Tramo]
+            
+            D --> G{Más Tramos?}
+            E --> G
+            F --> G
+            
+            G -->|Sí| C
+            
+            G -->|No| H([Calcular])
+            
+            H --> I([Resultados])
+            
+            style A fill:#339afb,color:#fff
+            style H fill:#339afb,color:#fff
+            style I fill:#339afb,color:#fff
+            style G fill:#fff,stroke:#339afb,color:#339afb
+            style B stroke:#339afb,color:#339afb,fill:#fff
+            style C stroke:#339afb,color:#339afb,fill:#fff
+            style D stroke:#339afb,color:#339afb,fill:#fff
+            style E stroke:#339afb,color:#339afb,fill:#fff
+            style F stroke:#339afb,color:#339afb,fill:#fff
+            linkStyle default stroke:#339afb,color:#339afb
+        </div>
+
+        <div class="mermaid">
+            flowchart TD
+            A([Tablas Comunes]) -->|Inicio| B[Selección de Tabla]
+            
+            B --> C{Tipo de Tabla}
+            
+            C --> D[Propiedades del Agua]
+            C --> E[Rugosidad Materiales]
+            C --> F[Accesorios]
+            
+            D --> G[Selección de Valor]
+            E --> G
+            F --> G
+            
+            G --> H([Mostrar Resultados])
+            
+            style A fill:#339afb,color:#fff
+            style H fill:#339afb,color:#fff
+            style C fill:#fff,stroke:#339afb,color:#339afb
+            style B stroke:#339afb,color:#339afb,fill:#fff
+            style D stroke:#339afb,color:#339afb,fill:#fff
+            style E stroke:#339afb,color:#339afb,fill:#fff
+            style F stroke:#339afb,color:#339afb,fill:#fff
+            style G stroke:#339afb,color:#339afb,fill:#fff
+            linkStyle default stroke:#339afb,color:#339afb
+        </div>
+    </section>
+    
+
+    <!-- <script>
+        // Inicializar Mermaid con configuración personalizada
+        mermaid.initialize({
+            theme: 'default',
+            startOnLoad: true,
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: '#339afb',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#339afb',
+                lineColor: '#339afb',
+                secondaryColor: '#fff'
+            }
+        });
+    </script> -->
+</body>
+</html>
